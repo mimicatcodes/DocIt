@@ -22,9 +22,8 @@
 		AAFE44681DDF68BE00922FB0 /* SymptomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFE44671DDF68BE00922FB0 /* SymptomView.xib */; };
 		AAFE446A1DDF68E600922FB0 /* SymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE44691DDF68E600922FB0 /* SymptomView.swift */; };
 		AAFE446C1DDF6B6C00922FB0 /* PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE446B1DDF6B6C00922FB0 /* PostType.swift */; };
-		B69638C41DE4E83A00FE7023 /* TemperatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69638C31DE4E83A00FE7023 /* TemperatureView.xib */; };
-		B69638C61DE4E84900FE7023 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69638C51DE4E84900FE7023 /* Temperature.swift */; };
 		B69638D21DE602FD00FE7023 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69638D11DE602FD00FE7023 /* AddNotesViewController.swift */; };
+		B6E4E7071DE6543A0047AF57 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4E7061DE6543A0047AF57 /* TemperatureViewController.swift */; };
 		B6ED5B361DDE4CDB00B56DFD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED5B351DDE4CDB00B56DFD /* TempViewController.swift */; };
 		BB6DEDB51DE61C7D00D8B93A /* FamilySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6DEDB41DE61C7D00D8B93A /* FamilySettingViewController.swift */; };
 		BB6DEDB71DE61D9400D8B93A /* MemberSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6DEDB61DE61D9400D8B93A /* MemberSettingViewController.swift */; };
@@ -62,9 +61,8 @@
 		AAFE44671DDF68BE00922FB0 /* SymptomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomView.xib; sourceTree = "<group>"; };
 		AAFE44691DDF68E600922FB0 /* SymptomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomView.swift; sourceTree = "<group>"; };
 		AAFE446B1DDF6B6C00922FB0 /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
-		B69638C31DE4E83A00FE7023 /* TemperatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemperatureView.xib; sourceTree = "<group>"; };
-		B69638C51DE4E84900FE7023 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		B69638D11DE602FD00FE7023 /* AddNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
+		B6E4E7061DE6543A0047AF57 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		B6ED5B351DDE4CDB00B56DFD /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		BB6DEDB41DE61C7D00D8B93A /* FamilySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilySettingViewController.swift; sourceTree = "<group>"; };
 		BB6DEDB61DE61D9400D8B93A /* MemberSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberSettingViewController.swift; sourceTree = "<group>"; };
@@ -170,9 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9FFBBB1DDA667500847FCF /* Main.storyboard */,
-				B69638C31DE4E83A00FE7023 /* TemperatureView.xib */,
 				AAFE44671DDF68BE00922FB0 /* SymptomView.xib */,
-				B69638C51DE4E84900FE7023 /* Temperature.swift */,
 				AAFE44691DDF68E600922FB0 /* SymptomView.swift */,
 			);
 			name = View;
@@ -194,6 +190,7 @@
 				AABA5C381DE3A3DF0041D112 /* MemberCollectionViewCell.swift */,
 				DD755E191DE3A99F002478D0 /* AddMembersViewController.swift */,
 				B69638D11DE602FD00FE7023 /* AddNotesViewController.swift */,
+				B6E4E7061DE6543A0047AF57 /* TemperatureViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 				AA9FFBC21DDA667500847FCF /* LaunchScreen.storyboard in Resources */,
 				AA9FFBBF1DDA667500847FCF /* Assets.xcassets in Resources */,
 				BBF453BD1DE34B5100E054E9 /* GoogleService-Info.plist in Resources */,
-				B69638C41DE4E83A00FE7023 /* TemperatureView.xib in Resources */,
 				AAFE44681DDF68BE00922FB0 /* SymptomView.xib in Resources */,
 				AA9FFBBD1DDA667500847FCF /* Main.storyboard in Resources */,
 			);
@@ -340,7 +336,6 @@
 			files = (
 				B6ED5B361DDE4CDB00B56DFD /* TempViewController.swift in Sources */,
 				AAFE44661DDF634800922FB0 /* PainLevel.swift in Sources */,
-				B69638C61DE4E84900FE7023 /* Temperature.swift in Sources */,
 				BB6DEDB71DE61D9400D8B93A /* MemberSettingViewController.swift in Sources */,
 				AAFE445E1DDF5AE900922FB0 /* Event.swift in Sources */,
 				AAFE446C1DDF6B6C00922FB0 /* PostType.swift in Sources */,
@@ -357,6 +352,7 @@
 				AA7ED5921DDF4C6F005F9AB2 /* Family.swift in Sources */,
 				AA9FFBBA1DDA667500847FCF /* ViewController.swift in Sources */,
 				AABA5C391DE3A3DF0041D112 /* MemberCollectionViewCell.swift in Sources */,
+				B6E4E7071DE6543A0047AF57 /* TemperatureViewController.swift in Sources */,
 				BB6DEDB51DE61C7D00D8B93A /* FamilySettingViewController.swift in Sources */,
 				BBAD950B1DE5182500C385BC /* Logics.swift in Sources */,
 				BBF4EEB11DDF59D400EBD3FE /* LoginViewController.swift in Sources */,
