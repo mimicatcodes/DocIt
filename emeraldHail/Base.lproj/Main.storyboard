@@ -871,10 +871,10 @@
             </objects>
             <point key="canvasLocation" x="2732" y="-842"/>
         </scene>
-        <!--Temp View Controller-->
+        <!--Temperature View Controller-->
         <scene sceneID="LQF-BX-6Q0">
             <objects>
-                <viewController id="eZ3-GL-9Ov" customClass="TempViewController" customModule="emeraldHail" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eZ3-GL-9Ov" customClass="TemperatureViewController" customModule="emeraldHail" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SzR-HL-ct2"/>
                         <viewControllerLayoutGuide type="bottom" id="1dj-H0-kdz"/>
@@ -886,11 +886,27 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-4S-8Ms">
                                 <rect key="frame" x="0.0" y="198" width="375" height="245"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rXX-dt-2DZ" id="YU6-WZ-DpZ"/>
+                                    <outlet property="delegate" destination="rXX-dt-2DZ" id="Q3z-CD-fkO"/>
+                                </connections>
                             </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ysW-cS-Ze9">
+                                <rect key="frame" x="60" y="71" width="271" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Oral"/>
+                                    <segment title="Ear"/>
+                                    <segment title="Armpit"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.34649784482758622" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12941176470588237" green="0.50196078431372548" blue="0.98039215686274506" alpha="0.80950969827586206" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="temperaturePickerView" destination="JpP-4S-8Ms" id="nxG-oZ-FGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T61-7N-S9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
