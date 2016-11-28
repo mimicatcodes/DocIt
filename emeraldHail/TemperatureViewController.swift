@@ -25,19 +25,29 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet weak var tempSegments: UISegmentedControl!
     
+    //Reference to database
+    var database: FIRDatabaseReference = FIRDatabase.database().reference()
+// Referenc to Post
+    var tempPostRef: FIRDatabaseReference = FIRDatabase.database().reference().child("posts")
+// Reference to storage
+    let storage : FIRStorage = FIRStorage.storage()
+    
+    var selectedTemp = " "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.temperaturePickerView.delegate = self
         self.temperaturePickerView.dataSource = self
-        // Do any additional setup after loading the view.
+// Do any additional setup after loading the view.
         self.temperatureImageView.image = UIImage(named: "defaultTemperatureImage")
         
     }
     
 // Save button temperature for the event based on these three options to member profile. 
-    
+// Have to wait to update Post Types before sending data to Firebase and generating eventID.
     @IBAction func saveTemperature(_ sender: Any) {
-        
+        let databasePostRef = database.child("posts").child(Logics.sharedInstance.eventID).childByAutoId()
+       // let temp = Post
       
         
     }
@@ -51,6 +61,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
             temperatureImageView.image = UIImage(named: "earTemperature")
         case 2:
             temperatureImageView.image = UIImage(named: "armpitTemperature")
+            
         default: print("Images have failed and something is wrong")
         }
         
@@ -79,6 +90,9 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         return availableTemps[row]
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedTemp = availableTemps[row] as! String
+    }
 
 }
 
