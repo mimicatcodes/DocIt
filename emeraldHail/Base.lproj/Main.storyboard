@@ -610,7 +610,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKB-QM-ocB" id="fxY-VR-Bs9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ii-kq-hQo">
@@ -748,7 +748,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UUt-sg-gbE" id="h81-2d-teZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVu-s8-nwW">
@@ -846,31 +846,6 @@
             </objects>
             <point key="canvasLocation" x="2369" y="167"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="nkE-3G-xCR">
-            <objects>
-                <viewController id="z5g-W1-3kv" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IZf-Df-DrL"/>
-                        <viewControllerLayoutGuide type="bottom" id="vMf-1H-ht2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ogh-pv-rqw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uH2-9c-3vs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98039132360000003" green="0.97655218840000002" blue="0.97635632750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yiu-ZG-DWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2732" y="-842"/>
-        </scene>
         <!--Title-->
         <scene sceneID="LQF-BX-6Q0">
             <objects>
@@ -884,15 +859,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-4S-8Ms">
-                                <rect key="frame" x="0.0" y="198" width="375" height="245"/>
+                                <rect key="frame" x="0.0" y="342" width="375" height="245"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.50196078430000002" blue="0.98039215690000003" alpha="0.80950969829999997" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rXX-dt-2DZ" id="YU6-WZ-DpZ"/>
                                     <outlet property="delegate" destination="rXX-dt-2DZ" id="Q3z-CD-fkO"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-8R-KJK">
+                                <rect key="frame" x="133" y="219" width="108" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTemperature:" destination="eZ3-GL-9Ov" eventType="touchUpInside" id="KVG-Ck-aU2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-NZ-1Zl">
+                                <rect key="frame" x="8" y="28" width="360" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ysW-cS-Ze9">
-                                <rect key="frame" x="60" y="71" width="271" height="29"/>
+                                <rect key="frame" x="52" y="293" width="271" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Oral"/>
@@ -900,15 +889,17 @@
                                     <segment title="Armpit"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentedTempSaveButton:" destination="eZ3-GL-9Ov" eventType="valueChanged" id="yoS-NA-IyH"/>
+                                    <action selector="segmentTemperatures:" destination="eZ3-GL-9Ov" eventType="valueChanged" id="ioO-kt-xCd"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.12941176470588237" green="0.50196078431372548" blue="0.98039215686274506" alpha="0.80950969827586206" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="I7k-7x-hFs"/>
                     <connections>
+                        <outlet property="tempSegments" destination="ysW-cS-Ze9" id="Tue-ZT-GwB"/>
+                        <outlet property="temperatureImageView" destination="1mR-NZ-1Zl" id="Siz-mm-bSj"/>
                         <outlet property="temperaturePickerView" destination="JpP-4S-8Ms" id="nxG-oZ-FGq"/>
                     </connections>
                 </viewController>

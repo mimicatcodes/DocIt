@@ -21,21 +21,38 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet weak var temperaturePickerView: UIPickerView!
     
+    @IBOutlet weak var temperatureImageView: UIImageView!
+    
+    @IBOutlet weak var tempSegments: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.temperaturePickerView.delegate = self
         self.temperaturePickerView.dataSource = self
         // Do any additional setup after loading the view.
+        self.temperatureImageView.image = UIImage(named: "defaultTemperatureImage")
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+// Save button temperature for the event based on these three options to member profile. 
+    
+    @IBAction func saveTemperature(_ sender: Any) {
+        
+      
+        
     }
     
     
-    // Save temperature for the event based on these three options to member profile.
-    @IBAction func segmentedTempSaveButton(_ sender: Any) {
+    @IBAction func segmentTemperatures(_ sender: UISegmentedControl) {
+        switch tempSegments.selectedSegmentIndex {
+        case 0:
+            temperatureImageView.image = UIImage(named: "oralTemperature")
+        case 1:
+            temperatureImageView.image = UIImage(named: "earTemperature")
+        case 2:
+            temperatureImageView.image = UIImage(named: "armpitTemperature")
+        default: print("Images have failed and something is wrong")
+        }
         
         
     }
@@ -43,18 +60,26 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     
-
+    
+    
+    
+    
+    
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return availableTemps.count
     }
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       //var temperatures = availableTemps[row].description -> Attempt to change the color of the font in the UI PickerView
         return availableTemps[row]
     }
-   
+
 
 }
+
+
