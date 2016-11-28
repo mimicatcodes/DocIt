@@ -871,7 +871,7 @@
             </objects>
             <point key="canvasLocation" x="2732" y="-842"/>
         </scene>
-        <!--Temperature View Controller-->
+        <!--Title-->
         <scene sceneID="LQF-BX-6Q0">
             <objects>
                 <viewController id="eZ3-GL-9Ov" customClass="TemperatureViewController" customModule="emeraldHail" customModuleProvider="target" sceneMemberID="viewController">
@@ -899,11 +899,15 @@
                                     <segment title="Ear"/>
                                     <segment title="Armpit"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedTempSaveButton:" destination="eZ3-GL-9Ov" eventType="valueChanged" id="yoS-NA-IyH"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588237" green="0.50196078431372548" blue="0.98039215686274506" alpha="0.80950969827586206" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="I7k-7x-hFs"/>
                     <connections>
                         <outlet property="temperaturePickerView" destination="JpP-4S-8Ms" id="nxG-oZ-FGq"/>
                     </connections>

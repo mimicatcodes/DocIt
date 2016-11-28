@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
+
 
 class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
      // Tanira: This data is to be used later with the beta version of the application. Please do not remove commented out section below. Thank you :D
@@ -31,7 +34,11 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     
-
+    // Save temperature for the event based on these three options to member profile.
+    @IBAction func segmentedTempSaveButton(_ sender: Any) {
+        
+        
+    }
     
     
     
@@ -46,10 +53,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        
         return availableTemps[row]
-        
     }
    
 
