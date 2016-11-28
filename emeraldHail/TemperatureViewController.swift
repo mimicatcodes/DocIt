@@ -47,8 +47,8 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
 // Have to wait to update Post Types before sending data to Firebase and generating eventID.
     @IBAction func saveTemperature(_ sender: Any) {
         let databasePostRef = database.child("posts").child(Logics.sharedInstance.eventID).childByAutoId()
-       // let temp = Post
-      
+        let temp = Post(note: selectedTemp)
+     //   let uniqueID =
         
     }
     

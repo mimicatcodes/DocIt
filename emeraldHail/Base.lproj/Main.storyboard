@@ -859,7 +859,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-4S-8Ms">
-                                <rect key="frame" x="0.0" y="342" width="375" height="245"/>
+                                <rect key="frame" x="0.0" y="402" width="375" height="245"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.50196078430000002" blue="0.98039215690000003" alpha="0.80950969829999997" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -868,7 +868,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-8R-KJK">
-                                <rect key="frame" x="133" y="219" width="108" height="54"/>
+                                <rect key="frame" x="133" y="241" width="108" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save"/>
@@ -876,12 +876,8 @@
                                     <action selector="saveTemperature:" destination="eZ3-GL-9Ov" eventType="touchUpInside" id="KVG-Ck-aU2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-NZ-1Zl">
-                                <rect key="frame" x="8" y="28" width="360" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ysW-cS-Ze9">
-                                <rect key="frame" x="52" y="293" width="271" height="29"/>
+                                <rect key="frame" x="52" y="312" width="271" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Oral"/>
@@ -892,11 +888,19 @@
                                     <action selector="segmentTemperatures:" destination="eZ3-GL-9Ov" eventType="valueChanged" id="ioO-kt-xCd"/>
                                 </connections>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mR-NZ-1Zl">
+                                <rect key="frame" x="7" y="50" width="360" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="&lt;Back" id="FFa-gv-BAD"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="I7k-7x-hFs"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tempSegments" destination="ysW-cS-Ze9" id="Tue-ZT-GwB"/>
                         <outlet property="temperatureImageView" destination="1mR-NZ-1Zl" id="Siz-mm-bSj"/>
