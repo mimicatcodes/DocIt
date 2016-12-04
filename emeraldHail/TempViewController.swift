@@ -43,6 +43,15 @@ class TempViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.temperatureImageVIew.image = UIImage(named: "defaultTempImage")
         
     }
+    // Mark: Method that checks to see if the temperature is a fever 
+    
+    
+    // Mark: Method that alerts the user about a possible fever 
+    
+    func feverAlertController(){
+        
+    }
+    
     
     // Save button temperature for the event based on these three options to member profile.
     // Have to wait to update Post Types before sending data to Firebase and generating eventID.

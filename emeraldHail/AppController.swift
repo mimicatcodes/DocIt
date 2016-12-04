@@ -66,7 +66,6 @@ extension AppController {
     //loads viewControllers based on identifier. need to create id -> pass value to activeVC -> add viewController
     func loadInitialViewController() {
         let id: StoryboardID = .welcomeViewController
-        activeVC = loadViewController(withStoryboardID: id)
         add(viewController: activeVC, animated: true)
     }
     
