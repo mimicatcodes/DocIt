@@ -11,8 +11,6 @@ import Firebase
 import FirebaseDatabase
 import GoogleSignIn
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
@@ -20,12 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
     var loginManager = LoginManager()
     
+    override init (){
+        super.init()
+        FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
+
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FIRApp.configure()
-        
-        
-        FIRDatabase.database().persistenceEnabled = true
+        //FIRApp.configure()
+      
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         //  GIDSignIn.sharedInstance().uiDelegate = self
         

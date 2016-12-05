@@ -22,15 +22,13 @@ class RegisterViewController: UIViewController {
     
     var googleSignInButton : UIButton!
 
-    // MARK: Properties
-
-    let store = DataStore.sharedInstance
-    let family = FIRDatabase.database().reference().child("family")
+ 
 
     // MARK: Loads
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRApp.configure()
         setupViews()
         configureGoogleButton()
         hideKeyboardWhenTappedAround()
@@ -42,6 +40,10 @@ class RegisterViewController: UIViewController {
         setupViews()
         configureGoogleButton()
     }
+    // MARK: Properties
+    
+    let store = DataStore.sharedInstance
+    let family = FIRDatabase.database().reference().child("family")
 
     // MARK: Actions
 

@@ -12,5 +12,6 @@ target 'emeraldHail' do
   pod 'Firebase/Storage'
   pod 'SDWebImage', '~>3.8'
   pod 'GoogleSignIn'
+  pod 'FirebaseUI/Google'
 
 end
