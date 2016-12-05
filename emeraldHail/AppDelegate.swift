@@ -18,24 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     
     var window: UIWindow?
-    var databaseRef: FIRDatabaseReference!
-    let store = DataStore.sharedInstance
-    let family = FIRDatabase.database().reference().child("family")
+    var loginManager = LoginManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        
+        
         FIRDatabase.database().persistenceEnabled = true
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         //  GIDSignIn.sharedInstance().uiDelegate = self
         
-        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().delegate = loginManager
         return true
     }
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        let handled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+        
+        return handled
+            
+        
     }
     
     

@@ -30,7 +30,7 @@ class FamilyViewController: UIViewController, UIImagePickerControllerDelegate, U
     var refresher = UIRefreshControl()
     var profileImage: UIImageView!
     var imageString = ""
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +153,7 @@ class FamilyViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func getFamilyID() {
+       
         store.family.id = (FIRAuth.auth()?.currentUser?.uid)!
     }
     

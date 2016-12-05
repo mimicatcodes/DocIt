@@ -14,11 +14,13 @@ class RegisterViewController: UIViewController {
     
     // MARK: Outlets
 
-    @IBOutlet weak var googleContainerView: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var createAccount: UIButton!
+    @IBOutlet weak var alreadyHaveAccount: UIButton!
+    
+    var googleSignInButton : UIButton!
 
     // MARK: Properties
 
@@ -30,12 +32,15 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        configureGoogleButton()
         hideKeyboardWhenTappedAround()
         GIDSignIn.sharedInstance().uiDelegate = self
+        checkLogin()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         setupViews()
+        configureGoogleButton()
     }
 
     // MARK: Actions
@@ -95,8 +100,31 @@ class RegisterViewController: UIViewController {
         createAccount.layer.cornerRadius = 2
     }
 
-    func googleCustomButton(){
+    func configureGoogleButton(){
+        googleSignInButton = UIButton(type: .system)
+        googleSignInButton.setBackgroundImage(#imageLiteral(resourceName: "googleImageButton"), for: .normal)
+        googleSignInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+        googleSignInButton.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addSubview(googleSignInButton)
+        
+        googleSignInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        googleSignInButton.bottomAnchor.constraint(equalTo: alreadyHaveAccount.topAnchor, constant: 10).isActive = true
+        googleSignInButton.topAnchor.constraint(equalTo: createAccount.bottomAnchor, constant: 10).isActive = true
+        googleSignInButton.heightAnchor.constraint(equalTo: alreadyHaveAccount.heightAnchor)
+        googleSignInButton.widthAnchor.constraint(equalTo: alreadyHaveAccount.widthAnchor)
+        view.layoutIfNeeded()
+        
+    }
+    
+    func checkLogin(){
+        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+            if user != nil {
+                // User is signed in
+            } else {
+                self.register()
+            }
+        })
     }
     
     func register() {
@@ -122,8 +150,8 @@ class RegisterViewController: UIViewController {
 
                 // TODO: Set the initial family name to something more descriptive (perhaps using their last name or something?)
                 self.family.child(self.store.family.id).child("name").setValue("New Family")
-
-                self.performSegue(withIdentifier: "showFamily", sender: nil)
+                //self.present(FamilyViewController() as UIViewController, animated: true, completion: nil) -> without Segue
+                //self.performSegue(withIdentifier: "showFamily", sender: nil)
             }
         }
     }
@@ -133,12 +161,12 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
-        viewController.dismiss(animated: false, completion: { _ in
+        RegisterViewController().dismiss(animated: false, completion: { _ in
         })
     }
     
     func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        present(viewController, animated: true, completion: nil)
+        present(FamilyViewController() as UIViewController, animated: true, completion: nil)
     }
     
     func signIn() {
