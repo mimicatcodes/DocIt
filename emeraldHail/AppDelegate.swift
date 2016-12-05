@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     
     var window: UIWindow?
-    
+    var databaseRef: FIRDatabaseReference!
+    let store = DataStore.sharedInstance
+    let family = FIRDatabase.database().reference().child("family")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,18 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //  GIDSignIn.sharedInstance().uiDelegate = self
         
         GIDSignIn.sharedInstance().delegate = self
-        
-//        if FIRAuth.auth()?.currentUser != nil{
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "FamilyViewController")
-//            window?.rootViewController = controller
-//            window?.makeKeyAndVisible()
-//            //self.presentViewController(controller, animated: true , completion: nil)
-//            
-//            //            print("\n\n\nUSER LOGGED IN\n\n\n\n")
-//        }
-        
-        
         return true
     }
     
@@ -50,25 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print(123123123123)
         
-        if let err = error {
-            print("Failed to log into Google: ", err)
-            return
-        }
-        print("Successfully logged into Google", user)
-        
-        guard let idToken = user.authentication.idToken else { return }
-        guard let accessToken = user.authentication.accessToken else { return }
-        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
-            if let err = error {
-                print("Failed to create a Firebase User with google account: ", err)
-                return
-            }
-            guard let uid = user?.uid else { return }
-            print("Successfully logged into Firebase with Google", uid)
-        })
         
     }
     

@@ -8,11 +8,9 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
 
-
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController {
   
     let store = DataStore.sharedInstance
     
@@ -28,8 +26,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         setupViews()
         hideKeyboardWhenTappedAround()
         
-        GIDSignIn.sharedInstance().uiDelegate = self
-      //  GIDSignIn.sharedInstance().delegate = self
+  
         
     }
     
@@ -83,10 +80,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
-    @IBAction func pressedGoogleSignIn(_ sender: Any) {
-            GIDSignIn.sharedInstance().signIn()
-    
-    }
+
     
 
     
@@ -125,18 +119,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
-// Mark: Google Login Delegate Function needed to work. 
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
-                withError error: NSError!) {
-        if (error == nil) {
-            // Perform any operations on signed in user here.
-            // ...
-        } else {
-            print("\(error.localizedDescription)")
-        }
-    }
-    
-    
+
 
  
     

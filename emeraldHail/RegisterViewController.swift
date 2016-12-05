@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class RegisterViewController: UIViewController {
     
@@ -30,6 +31,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         hideKeyboardWhenTappedAround()
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +60,7 @@ class RegisterViewController: UIViewController {
             createAccount.backgroundColor = UIColor.lightGray
         }
     }
+  
 
     // MARK: Functions
 
@@ -92,6 +95,10 @@ class RegisterViewController: UIViewController {
         createAccount.layer.cornerRadius = 2
     }
 
+    func googleCustomButton(){
+        
+    }
+    
     func register() {
         guard let email = emailField.text, let password = passwordField.text else { return }
 
@@ -121,4 +128,21 @@ class RegisterViewController: UIViewController {
         }
     }
 
+}
+
+extension RegisterViewController: GIDSignInUIDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        viewController.dismiss(animated: false, completion: { _ in
+        })
+    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    func signIn() {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
 }
