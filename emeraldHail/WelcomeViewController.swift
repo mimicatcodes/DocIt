@@ -56,6 +56,7 @@ class WelcomeViewController: UIViewController {
     }
 
     @IBAction func signInPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: .closeLoginVC, object: nil)
         print("signInPressed")
     }
 

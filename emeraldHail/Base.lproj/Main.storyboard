@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1270" y="-351"/>
+            <point key="canvasLocation" x="-2282" y="-247"/>
         </scene>
         <!--Your Family-->
         <scene sceneID="Vaw-QG-Cac">
@@ -1569,7 +1569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wF1-Py-2gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="413"/>
+            <point key="canvasLocation" x="-2282" y="582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdI-wp-S1Q">
@@ -1660,7 +1660,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInPressed:" destination="Lab-UU-Fjj" eventType="touchUpInside" id="sfM-HL-Pi9"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="8IQ-kN-dMw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqf-sG-KUf">
@@ -1713,12 +1712,11 @@
                         <outlet property="googleContainerView" destination="1SJ-xb-pSK" id="K6a-YG-qLY"/>
                         <outlet property="signIn" destination="Ikh-9y-kt3" id="SOB-mO-4nW"/>
                         <outlet property="touchID" destination="wqf-sG-KUf" id="RRd-tL-jhr"/>
-                        <segue destination="XIF-ae-qWP" kind="show" identifier="showFamily" action="showDetailViewController:sender:" id="D6a-tn-o54"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuX-TL-eqM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2281" y="-351"/>
+            <point key="canvasLocation" x="-2282" y="-1005"/>
         </scene>
     </scenes>
     <resources>
@@ -1729,7 +1727,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rhx-aR-qm3"/>
-        <segue reference="D6a-tn-o54"/>
-        <segue reference="8IQ-kN-dMw"/>
+        <segue reference="C4Q-6Y-LBY"/>
     </inferredMetricsTieBreakers>
 </document>
