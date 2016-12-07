@@ -128,12 +128,11 @@
                         <outlet property="errorLabel" destination="G0E-hT-X9b" id="CTg-Nm-k8T"/>
                         <outlet property="passwordField" destination="HKX-dZ-sjJ" id="gLZ-Le-4Jb"/>
                         <outlet property="signIn" destination="Gi7-d8-LyO" id="m0Y-YR-SCz"/>
-                        <segue destination="XIF-ae-qWP" kind="show" identifier="showFamily" id="C4Q-6Y-LBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="-247"/>
+            <point key="canvasLocation" x="-2282" y="-237"/>
         </scene>
         <!--Your Family-->
         <scene sceneID="Vaw-QG-Cac">
@@ -1566,7 +1565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wF1-Py-2gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="582"/>
+            <point key="canvasLocation" x="-2282" y="636"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdI-wp-S1Q">
@@ -1713,7 +1712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuX-TL-eqM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="-1005"/>
+            <point key="canvasLocation" x="-2282" y="-981"/>
         </scene>
     </scenes>
     <resources>
