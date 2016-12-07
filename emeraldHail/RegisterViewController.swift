@@ -128,8 +128,7 @@ class RegisterViewController: UIViewController {
 
                 self.saveDataToCoreData()
 
-
-                self.performSegue(withIdentifier: "showFamily", sender: nil)
+                NotificationCenter.default.post(name: .closeLoginVC, object: nil)
             }
         }
     }
