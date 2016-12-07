@@ -71,7 +71,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func createAccountPressed(_ sender: Any) {
         NotificationCenter.default.post(name: .closeRegisterVC, object: nil)
-        
+
     }
 
     // This function enables/disables the signIn button when the fields are empty/not empty.
@@ -138,8 +138,12 @@ class LoginViewController: UIViewController {
             }
             // Set the sharedInstance familyID to the current user.uid
             self.store.family.id = (user?.uid)!
-            //TO DO: Notification instead of Segue via App Controller
-            NotificationCenter.default.post(name: .closeLoginVC, object: nil)
+
+
+            self.performSegue(withIdentifier: "showFamily", sender: nil)
+
+
+
         }
     }
 
