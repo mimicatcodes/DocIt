@@ -14,6 +14,8 @@ import FirebaseDatabase
 import SDWebImage
 import CoreData
 import MessageUI
+import GoogleSignIn
+
 
 class FamilySettingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 
@@ -48,11 +50,14 @@ class FamilySettingViewController: UIViewController, UIImagePickerControllerDele
         do {
             try FIRAuth.auth()?.signOut()
             store.clearDataStore()
-            
             NotificationCenter.default.post(name: .openWelcomeVC, object: nil)
+            
         } catch let signOutError as NSError {
             print ("Error signing out: \(signOutError.localizedDescription)")
         }
+        
+        
+        
     }
 
     @IBAction func touchIDOnOff(_ sender: UISegmentedControl) {
