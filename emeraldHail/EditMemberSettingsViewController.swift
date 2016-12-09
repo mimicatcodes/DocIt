@@ -312,11 +312,30 @@ class EditMemberSettingsViewController: UIViewController, UIPickerViewDelegate, 
         return true
     }
     
+    
+    @IBAction func genderTFDidBeginEditing(_ sender: Any) {
+        genderTextField.text = store.genderSelections[genderSelection.selectedRow(inComponent: 0)]
+    }
+    
+    @IBAction func heightTFDidBeginEditing(_ sender: Any) {
+        heightTextField.text = store.heightSelectionsFeet[heightSelection.selectedRow(inComponent: 0)] + store.heightSelections[heightSelection.selectedRow(inComponent: 1)]
+    }
+    
+    @IBAction func weightTFDidBeginEditing(_ sender: Any) {
+        weightTextField.text = store.weightSelections[weightSelection.selectedRow(inComponent: 0)]
+    }
+    
+    @IBAction func bloodTypeTFDidBeginEditing(_ sender: Any) {
+        bloodTextField.text = store.bloodTypeSelections[bloodSelection.selectedRow(inComponent: 0)]
+    }
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField){
         let dobSelection = UIDatePicker()
         dobTextField.inputView = dobSelection
         dobSelection.datePickerMode = UIDatePickerMode.date
         dobSelection.addTarget(self, action: #selector(self.datePickerChanged(sender:)) , for: .valueChanged)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -371,12 +390,20 @@ class EditMemberSettingsViewController: UIViewController, UIPickerViewDelegate, 
         case weightSelection:
             return store.weightSelections.count
         case heightSelection:
-            return store.heightSelections.count
+            
+            if component == 0{
+                return store.heightSelectionsFeet.count
+            } else if component == 1 {
+                return store.heightSelections.count
+            }
         
         default:
             break
         }
         return 0
+        
+        
+        
         
     }
     
@@ -393,10 +420,8 @@ class EditMemberSettingsViewController: UIViewController, UIPickerViewDelegate, 
         case heightSelection:
             if component == 0 {
                 feet = store.heightSelectionsFeet[row]
-                print("DID I GET SOME \(feet)")
             } else if component == 1 {
                 inches = store.heightSelections[row]
-                print("DID I GET ALOT OF \(inches)")
             }
             heightTextField.text = "\(feet)\(inches)"
         default:
@@ -415,9 +440,9 @@ class EditMemberSettingsViewController: UIViewController, UIPickerViewDelegate, 
         case weightSelection:
             return store.weightSelections[row]
         case heightSelection:
-            if component == 0{
+            if component == 0 {
                 return store.heightSelectionsFeet[row]
-            } else {
+            } else if component == 1 {
                 return store.heightSelections[row]
             }
         default:
